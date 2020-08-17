@@ -1,83 +1,75 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class OceanMaster : MonoBehaviour
 {
-    public Vector2 direction;
-    public float waveStartHeight;
-    public float waveMinHeight;
-    public float waveCount;
-    public float speedOscillation;
-    public float faza;
-
     [SerializeField]
     private Material waterMaterial = null;
     [SerializeField]
     private Material foamTrailMaterial = null;
 
+    [SerializeField]
+    private GerstnerWave[] gerstnerWaves;
+    
+
     void Awake()
     {
-        direction.Normalize();
+        //ApplyMaterialsProperties();
+    }
 
-        var materials = new[]{ waterMaterial, foamTrailMaterial };
-        foreach(var material in materials)
+    /// <summary>
+    /// Passed wave params to material, direction need normalized
+    /// </summary>
+    public void ApplyMaterialsProperties()
+    {
+        var materials = new[]{waterMaterial, foamTrailMaterial};
+        foreach (var material in materials)
         {
-            material.SetVector(Shader.PropertyToID("Vector2_WaveDirection"),
-                new Vector2(direction.x, direction.y));
-            material.SetFloat(Shader.PropertyToID("Vector1_WaveStartHeight"), waveStartHeight);
-            material.SetFloat(Shader.PropertyToID("Vector1_WaveMinHeight"), waveMinHeight);
-            material.SetFloat(Shader.PropertyToID("Vector1_WaveCount"), waveCount);
-            material.SetFloat(Shader.PropertyToID("Vector1_WaveSpeedOscillation"), speedOscillation);
-            material.SetFloat(Shader.PropertyToID("Vector1_WaveStartFaza"), faza);
+            if (material != null)
+            {
+                for (int i = 0; i < gerstnerWaves.Length; i++)
+                {
+                    var wave = gerstnerWaves[i];
+                    var dirProp = Shader.PropertyToID($"Vector2_Wave{i + 1}Direction");
+                    material.SetVector(dirProp, wave.direction.normalized);
+                    var parmasId = Shader.PropertyToID($"Vector4_Wave{i + 1}LenAmplStepSpeed");
+                    var waveParams = new Vector4(wave.lenght, wave.amplitude, wave.stepness, wave.speed);
+                    material.SetVector(parmasId, waveParams);
+                }
+            }
+            else
+            {
+                Debug.LogWarning($"material '{material.name}' not setted, apply do not work");
+            }
         }
     }
-    public float GetWaveHeight2(float x, float z)
-    {
-        float time = Time.time + 1;
-        float k = waveCount;
-        float w = speedOscillation;
-        float time2 = Mathf.Min(time, waveMinHeight);
-        var pos = new Vector2(x, z);
-        var val = Vector2.Dot(pos, direction);
-        var val2 = Vector2.Dot(pos, new Vector2(direction.y, -direction.x));
-        float aplidute1 = waveStartHeight * Mathf.Sin(k * val - w * time + faza) / time2;
-        float aplidute2 = waveStartHeight * Mathf.Sin(k * val2 - w * time + faza) / time2;
-        return (aplidute1 + aplidute2) / 2;
-    }
-    public float GetSimpleWaveHeight2(float x, float z)
-    {
-        float time = Time.time + 1;
-        float k = waveCount;
-        float w = speedOscillation;
-        float time2 = Mathf.Min(time, waveMinHeight);
-        var pos = new Vector2(x, z);
-        var val = Vector2.Dot(pos, direction);
-        float aplidute1 = waveStartHeight * Mathf.Sin(k * val - w * time + faza) / time2;
-        return aplidute1;
-    }
-    public float DDX_GetWaveHeight2(float x, float z)
-    {
-        float time = Time.time + 1;
-        float k = waveCount;
-        float w = speedOscillation;
-        float time2 = Mathf.Min(time, waveMinHeight);
-        var pos = new Vector2(x, z);
-        var val = Vector3.Dot(pos, direction);
-        float aplidute1 = direction.x * k * waveStartHeight
-            * Mathf.Cos(k * val - w * time + faza) / time2;
-        return aplidute1;
-    }
-    public float DDZ_GetWaveHeight2(float x, float z)
-    {
-        float time = Time.time + 1;
-        float k = waveCount;
-        float w = speedOscillation;
-        float time2 = Mathf.Min(time, waveMinHeight);
-        var pos = new Vector2(x, z);
-        var val = Vector3.Dot(pos, direction);
-        float aplidute1 = direction.y * k * waveStartHeight
-            * Mathf.Cos(k * val - w * time + faza) / time2;
-        return aplidute1;
-    }
 
-
+    public Vector3 GetPosition(Vector3 vertexPosition)
+    {
+        var position = vertexPosition;
+        position.y = transform.position.y;
+        foreach (var wave in gerstnerWaves)
+        {
+            position += wave.GetPosition(vertexPosition);
+        }
+        return position;
+    }
+    public Vector3 GetTanget(Vector3 vertexPosition)
+    {
+        var tangent = new Vector3(1, 0, 0);
+        foreach (var wave in gerstnerWaves)
+        {
+            tangent += wave.GetTangent(vertexPosition);
+        }
+        return tangent;
+    }
+    public Vector3 GetNormal(Vector3 vertexPosition)
+    {
+        var normal = new Vector3(0, 1, 0);
+        foreach (var wave in gerstnerWaves)
+        {
+            normal += wave.GetNormal(vertexPosition);
+        }
+        return normal;
+    }
 }

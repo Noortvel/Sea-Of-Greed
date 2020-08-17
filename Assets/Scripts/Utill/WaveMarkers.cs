@@ -25,7 +25,8 @@ public class WaveMarkers : MonoBehaviour
         for (int i = 0; i < targetsList.Length; i++)
         {
             var targetPos = targetsList[i].position;
-            waveHeight = ocean.GetWaveHeight2(targetPos.x, targetPos.z);
+            var waterPosition = ocean.GetPosition(targetPos);
+            waveHeight = waterPosition.y;// ocean.GetWaveHeight2(targetPos.x, targetPos.z);
             targetPos.y = waveHeight;
             markers[i].position = targetPos;
         }

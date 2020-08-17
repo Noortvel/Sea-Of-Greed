@@ -149,8 +149,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3196035609992244006}
+  m_Children: []
   m_Father: {fileID: 463545311}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -166,14 +165,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e8ebb0a6039b8489bea19f9c9ba1fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 1}
-  waveStartHeight: 6
-  waveMinHeight: 4
-  waveCount: 0.2
-  speedOscillation: 1
-  faza: 0
-  waterMaterial: {fileID: 2100000, guid: f35d194fc4586d64fbb55815bbb50c86, type: 2}
-  foamTrailMaterial: {fileID: 2100000, guid: 3529e7ffc67cb774fa2b0f6060f467ef, type: 2}
+  waterMaterial: {fileID: 2100000, guid: f035d53ec08ce7f468d2e6a71128492c, type: 2}
+  foamTrailMaterial: {fileID: 2100000, guid: 10abb66a358597b468cbdcdd1501e392, type: 2}
+  gerstnerWaves:
+  - direction: {x: 1, y: 0}
+    lenght: 2200
+    amplitude: 0.9
+    stepness: 1
+    speed: 0.5
+    _QD: 0
+  - direction: {x: 0, y: 1}
+    lenght: 1600
+    amplitude: 0.5
+    stepness: 1
+    speed: 0.5
+    _QD: 0
+  - direction: {x: 1, y: 0}
+    lenght: 800
+    amplitude: 1
+    stepness: 0
+    speed: 0.5
+    _QD: 0
 --- !u!1 &463545310
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +214,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 358240077}
+  - {fileID: 3196035609992244006}
   - {fileID: 2243079628325623664}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -567,7 +580,7 @@ Transform:
   - {fileID: 211561281209794693}
   - {fileID: 780776878}
   m_Father: {fileID: 463545311}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2248117188388735026
 GameObject:
@@ -653,7 +666,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f35d194fc4586d64fbb55815bbb50c86, type: 2}
+  - {fileID: 2100000, guid: f035d53ec08ce7f468d2e6a71128492c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -711,8 +724,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 358240077}
-  m_RootOrder: 0
+  m_Father: {fileID: 463545311}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7968491624762423528
 MonoBehaviour:
@@ -727,6 +740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oceanMaster: {fileID: 358240078}
+  isShowBasisArrows: 1
   arrowNormalPrefab: {fileID: 5358109944120891567, guid: b4660e42c0674514cb326187eba4977b,
     type: 3}
   arrowTangentPrefab: {fileID: 6578217276846791556, guid: ea64367729157af41a233a169505faa2,
@@ -735,6 +749,7 @@ MonoBehaviour:
     type: 3}
   isCPUDeforming: 1
   isFlipBitangent: 0
+  perlinNoiseDevider: 8
   _normalLen: 0
   _tangentLen: 0
   _bitangentLen: 0

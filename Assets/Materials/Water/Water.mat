@@ -58,11 +58,11 @@ Material:
     - Vector1_249587FF: 4
     - Vector1_3D7C9B9A: 1
     - Vector1_4A074FD3: 1.76
-    - Vector1_5C93B4CE: 1
-    - Vector1_6BD9644C: 0.78
+    - Vector1_5C93B4CE: 0.31
+    - Vector1_6BD9644C: 0.7
     - Vector1_75AB97C: 1
     - Vector1_83B2336C: 0.95
-    - Vector1_9BFD2D72: 0.14
+    - Vector1_9BFD2D72: 0.08
     - Vector1_A8C55E0D: 6
     - Vector1_DC070B09: 0.2
     - Vector1_F0AE7E8: 0
@@ -70,9 +70,9 @@ Material:
     - Vector1_StartFaza: 0
     - Vector1_WaveCount: 0.1
     - Vector1_WaveMinHeight: 1
-    - Vector1_WaveSpeedOscillation: 0.38
+    - Vector1_WaveSpeedOscillation: 0.1
     - Vector1_WaveStartFaza: 0
-    - Vector1_WaveStartHeight: 2
+    - Vector1_WaveStartHeight: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -104,8 +104,8 @@ Material:
     - Vector2_999939D5: {r: 1, g: 0, b: 0, a: 0}
     - Vector2_C33600B6: {r: 1, g: 0, b: 0, a: 0}
     - Vector2_Direction: {r: 1, g: 0, b: 1, a: 0}
-    - Vector2_F552D9AC: {r: 0.2, g: 0.2, b: 0.2, a: 0}
-    - Vector2_WaveDirection: {r: 0.70710677, g: 0.70710677, b: 0, a: 0}
+    - Vector2_F552D9AC: {r: 2, g: 2, b: 0, a: 0}
+    - Vector2_WaveDirection: {r: 1, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

@@ -48,7 +48,8 @@ public class BoatWaterPhysic : MonoBehaviour
         for (int i = 0; i < significantForFrowardMoveForcePoints.Count; i++)
         {
             var position = significantForFrowardMoveForcePoints[i].position;
-            float waterLevel = ocean.GetWaveHeight2(position.x, position.z);
+            var waterPosition = ocean.GetPosition(position);
+            float waterLevel = waterPosition.y; //ocean.GetWaveHeight2(position.x, position.z);
             float waterDeltaLevel = waterLevel - position.y;
             significantPointsIsUnderWater[i] = waterDeltaLevel >= 0;
         }
@@ -73,7 +74,8 @@ public class BoatWaterPhysic : MonoBehaviour
         for (int i = 0; i < pointsCount; i++)
         {
             var position = forcePoints.GetChild(i).position;
-            float waterLevel = ocean.GetWaveHeight2(position.x, position.z);
+            var waterPosition = ocean.GetPosition(position);
+            float waterLevel = waterPosition.y;// ocean.GetWaveHeight2(position.x, position.z);
             float waterDeltaLevel = waterLevel - position.y;
 
             float gydroStaticFactor = waterDeltaLevel > 0 ? waterDeltaLevel : 0;
