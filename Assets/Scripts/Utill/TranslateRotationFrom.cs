@@ -5,9 +5,9 @@ using UnityEngine;
 public class TranslateRotationFrom : MonoBehaviour
 {
     [SerializeField]
-    private Transform target;
+    private Transform target = null;
     [SerializeField]
-    private bool isX, isY, isZ;
+    private bool isX = false, isY = false, isZ = false;
 
     void Update()
     {

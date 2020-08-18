@@ -2957,7 +2957,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547344362}
-  m_LocalRotation: {x: -0.026733415, y: -0.000000017267388, z: -4.6178125e-10, w: 0.9996426}
+  m_LocalRotation: {x: -0.026733413, y: 0.000000017267384, z: 4.617811e-10, w: 0.9996426}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3514,7 +3514,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676972834}
-  m_LocalRotation: {x: 0.009596208, y: 0.000000017222384, z: -1.6527721e-10, w: 0.999954}
+  m_LocalRotation: {x: 0.009596211, y: 0.000000017205592, z: -1.651161e-10, w: 0.999954}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3972,7 +3972,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762039635}
-  m_LocalRotation: {x: -0.008594044, y: -0.000000034428286, z: -2.9588912e-10, w: 0.9999631}
+  m_LocalRotation: {x: -0.008594042, y: 0.000000034428286, z: 2.9588906e-10, w: 0.9999631}
   m_LocalPosition: {x: 0, y: 2.5, z: -15}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
@@ -5451,23 +5451,36 @@ MonoBehaviour:
   foamTrailMaterial: {fileID: 2100000, guid: 10abb66a358597b468cbdcdd1501e392, type: 2}
   gerstnerWaves:
   - direction: {x: 1, y: 0}
-    lenght: 2000
-    amplitude: 0.4
-    stepness: 0.05
-    speed: 0.5
-    _QD: 0
+    lenght: 128
+    amplitude: 0.05
+    stepness: 0.1
+    speed: 0.07064771
+  - direction: {x: 0.70710677, y: 0.70710677}
+    lenght: 128
+    amplitude: 0.05
+    stepness: 0.35
+    speed: 0.07064771
   - direction: {x: 0, y: 1}
-    lenght: 2000
+    lenght: 2048
     amplitude: 0.3
-    stepness: 0.05
-    speed: 0.5
-    _QD: 0
-  - direction: {x: 0, y: 1}
-    lenght: 1400
-    amplitude: 0.4
     stepness: 1
-    speed: 0.5
-    _QD: 0
+    speed: 0.28259084
+  - direction: {x: 1, y: 0}
+    lenght: 256
+    amplitude: 0.2
+    stepness: 1
+    speed: 0.099910945
+  - direction: {x: 0, y: 1}
+    lenght: 2048
+    amplitude: 0.7
+    stepness: 0.43
+    speed: 0.28259084
+  - direction: {x: 1, y: 0}
+    lenght: 2048
+    amplitude: 0.35
+    stepness: 1
+    speed: 0.28259084
+  _speedDivider: 200
 --- !u!1001 &980144142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5844,7 +5857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &994342725
 Transform:
   m_ObjectHideFlags: 0
@@ -6550,7 +6563,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096620430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -303}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2051893145}
@@ -7129,7 +7142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232597438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 980144143}
@@ -7969,7 +7982,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485783315}
-  m_LocalRotation: {x: -0.008594041, y: -0.000000017214145, z: -1.4794453e-10, w: 0.9999631}
+  m_LocalRotation: {x: -0.008594041, y: 0.000000017214145, z: 1.4794453e-10, w: 0.9999631}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8957,7 +8970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741678303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8, y: 0, z: 124.4}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 580682943}
@@ -10212,8 +10225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forcePoints: {fileID: 1900733830}
   dencity: 250
-  waterDrag: 6.5
-  waterAngularDrag: 35
+  waterDrag: 7.49
+  waterAngularDrag: 55
   volumeHeight: 2
   volumeHeightScale: 1.5
 --- !u!114 &2051893148
@@ -10263,8 +10276,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   power: 800
-  maxReverseVelocity: 15
-  reversePower: 400
+  maxReverseVelocity: 20
+  reversePower: 500
   rotationSpeedIncreace:
     serializedVersion: 2
     m_Curve:

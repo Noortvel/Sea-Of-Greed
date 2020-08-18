@@ -111,12 +111,12 @@ Material:
     - Vector2_B9A7A755: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_F5B474A6: {r: 0, g: 1, b: 0, a: 0}
     - Vector2_Wave1Direction: {r: 1, g: 0, b: 0, a: 0}
-    - Vector2_Wave2Direction: {r: 0, g: 1, b: 0, a: 0}
+    - Vector2_Wave2Direction: {r: 0.70710677, g: 0.70710677, b: 0, a: 0}
     - Vector2_Wave3Direction: {r: 0, g: 1, b: 0, a: 0}
     - Vector2_WaveDirection: {r: 1, g: 0, b: 0, a: 0}
-    - Vector4_Wave1LenAmplStepSpeed: {r: 2000, g: 0.4, b: 0.05, a: 0.5}
-    - Vector4_Wave2LenAmplStepSpeed: {r: 2000, g: 0.3, b: 0.05, a: 0.5}
-    - Vector4_Wave3LenAmplStepSpeed: {r: 1400, g: 0.4, b: 1, a: 0.5}
+    - Vector4_Wave1LenAmplStepSpeed: {r: 128, g: 0.05, b: 0.1, a: 0.07064771}
+    - Vector4_Wave2LenAmplStepSpeed: {r: 128, g: 0.05, b: 0.35, a: 0.07064771}
+    - Vector4_Wave3LenAmplStepSpeed: {r: 2048, g: 0.3, b: 1, a: 0.28259084}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Direction: {r: 0, g: 1, b: 0, a: 0}

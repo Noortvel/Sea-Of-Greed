@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿#if UNITY_EDITOR
+
 using UnityEngine;
 using UnityEditor;
 
-#if UNITY_EDITOR
+
 [CustomEditor(typeof(OceanMeshGenerator))]
 [CanEditMultipleObjects]
 public class OceanMeshGeneratorEditor : Editor {

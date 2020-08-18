@@ -4,23 +4,23 @@ using UnityEngine;
 public class BoatController : MonoBehaviour {
 
     [SerializeField, Min(1)]
-    private float maxForwardVelocity;
+    private float maxForwardVelocity = 1;
     [SerializeField]
     private AnimationCurve speedIncreace = null;
     [SerializeField]
-    private float power;
+    private float power = 1;
     [SerializeField, Min(1)]
-    private float maxReverseVelocity;
+    private float maxReverseVelocity = 1;
     [SerializeField]
-    private float reversePower;
+    private float reversePower = 1;
 
     [SerializeField]
     private AnimationCurve rotationSpeedIncreace = null;
     [SerializeField]
-    private float rotationSpeed;
+    private float rotationSpeed = 1;
 
     [SerializeField]
-    private float brakingSpeed;
+    private float brakingSpeed = 1;
     [SerializeField]
     private float sideBrakingScale = 1;
     [SerializeField]

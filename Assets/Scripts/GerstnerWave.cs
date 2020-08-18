@@ -10,21 +10,19 @@ public class GerstnerWave
     public float stepness;
     public float speed;
 
-    private static int WavesCount = 3;
+    private static int WavesCount = 6;
 
 
-    private const float G = 9.8f;
+    public const float G = 9.8f;
+    public const float PI = 3.14159274f;
 
-    public float _QD = 0;
     public Vector3 GetPosition(Vector3 position)
     {
         float time = Time.time;
-        float w = Mathf.Sqrt((G * 2 * Mathf.PI) / lenght);
+        float w = Mathf.Sqrt(G * (2 * PI / lenght));
         float q = stepness / (w * amplitude * WavesCount);
-        _QD = q;
-        direction.Normalize();
 
-        float xArg = w * Vector3.Dot(direction, new Vector3(position.x, position.z)) + speed * time;
+        float xArg = w * Vector2.Dot(direction, new Vector2(position.x, position.z)) + speed * time;
 
         float xVal = q * amplitude * direction.x * Mathf.Cos(xArg);
         float zVal = q * amplitude * direction.y * Mathf.Cos(xArg);
@@ -33,11 +31,11 @@ public class GerstnerWave
     }
     public Vector3 GetTangent(Vector3 position)
     {
-        float w = Mathf.Sqrt((G * 2 * Mathf.PI) / lenght);
+        float w = Mathf.Sqrt((G * 2 * PI) / lenght);
         float wa = w * amplitude;
 
         float q = stepness / (wa * WavesCount);
-
+        
         float xArg = w * Vector3.Dot(direction, position) + speed * Time.time;
 
         float x = -q * direction.x * direction.x * wa * Mathf.Sin(xArg);
@@ -47,7 +45,7 @@ public class GerstnerWave
     }
     public Vector3 GetNormal(Vector3 position)
     {
-        float w = Mathf.Sqrt((G * 2 * Mathf.PI) / lenght);
+        float w = Mathf.Sqrt((G * 2 * PI) / lenght);
         float wa = w * amplitude;
 
         float q = stepness / (wa * WavesCount);

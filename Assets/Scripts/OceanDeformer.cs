@@ -43,12 +43,11 @@ public class OceanDeformer : MonoBehaviour {
     private bool isCPUDeforming = false;
     [SerializeField]
     private bool isFlipBitangent = false;
-    [SerializeField]
-    private float perlinNoiseDevider = 8f;
-    [SerializeField, Header("Debug Info")]
-    private float _normalLen;
-    [SerializeField]
-    private float _tangentLen, _bitangentLen;
+
+    //[SerializeField, Header("Debug Info")]
+    //private float _normalLen;
+    //[SerializeField]
+    //private float _tangentLen, _bitangentLen;
 
     private Vector3[] savedVerts;
 

@@ -58,17 +58,17 @@ public class PerlinNoiseWavesGenerationTest : MonoBehaviour
 
 
     [SerializeField]
-    private Vector2Int textureSize;
+    private Vector2Int textureSize = Vector2Int.one;
 
     private Texture2D texture;
     private RawImage rawImage;
 
     [SerializeField, Header("Perlin Generate Keycode.P")]
-    private Vector2 perlinParmsScale;
+    private Vector2 perlinParmsScale = Vector2.one;
     [SerializeField, Header("Sinus Generate Keycode.S")]
-    private Vector2 sinWavesParmsScale;
+    private Vector2 sinWavesParmsScale = Vector2.one;
     [SerializeField, Header("Pliphs Generate Keycode.O")]
-    private Vector2 philipsParmsScale;
+    private Vector2 philipsParmsScale = Vector2.one;
 
     void Start()
     {
@@ -124,8 +124,7 @@ public class PerlinNoiseWavesGenerationTest : MonoBehaviour
         return height;
     }
     private Vector2 _philipsTempVec;
-    [SerializeField]
-    private float pathSize = 10;
+
     [SerializeField]
     private float philipsHeightScale = 1;
     private float PhilipsGenerator(float x, float y)

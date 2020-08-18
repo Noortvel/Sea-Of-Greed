@@ -14,9 +14,9 @@ public class WavesBumpTest : MonoBehaviour
     private float divideImageFitter = 1;
 
     [SerializeField]
-    private float heightMaxHeight;
+    private float heightMaxHeight = 0;
     [SerializeField]
-    private float heightNegativeFixOffset;
+    private float heightNegativeFixOffset = 0;
 
     private Texture2D texture;
     private RawImage rawImage;

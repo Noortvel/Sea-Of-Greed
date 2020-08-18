@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class SpringArm : MonoBehaviour {
 
-	[SerializeField] private Transform target;
-	[SerializeField] private float slerpFactor;
+	[SerializeField] private Transform target = null;
+	[SerializeField] private float slerpFactor = 1;
 
 	[SerializeField, Min(1)]
 	private float mouseXSence = 1;

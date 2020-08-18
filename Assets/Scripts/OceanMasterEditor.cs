@@ -1,5 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
+#if UNITY_EDITOR
+using System.Runtime.InteropServices;
 using UnityEditor;
 using UnityEngine;
 
@@ -14,9 +15,15 @@ public class OceanMasterEditor : Editor
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
+        //EditorGUILayout.FloatField(0);
         if (GUILayout.Button("Apply Materials Properties"))
         {
             oceanMaster.ApplyMaterialsProperties();
         }
+        if (GUILayout.Button("Fix props to reccomended(len,speed)"))
+        {
+            oceanMaster.FitParamToReccomendByWaveLen();
+        }
     }
 }
+#endif

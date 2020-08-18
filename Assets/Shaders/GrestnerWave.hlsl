@@ -12,7 +12,7 @@ float waveLen, float amplitude, float stepness, float speed,
     inout float3 normal)
 {
     const static float M_PI = 3.14159274;
-    const static float WAVES_COUNT = 3;
+    const static float WAVES_COUNT = 6;
     float time = _Time.y;
     float g = 9.8;
     float w = sqrt(g * (2 * M_PI / waveLen));
@@ -41,6 +41,9 @@ void GerstnerWave_float(float3 vertexPosition,
 float2 direction1, float4 params1,
 float2 direction2, float4 params2,
 float2 direction3, float4 params3,
+float2 direction4, float4 params4,
+float2 direction5, float4 params5,
+float2 direction6, float4 params6,
     out float3 position,
     out float3 tangent,
     out float3 normal)
@@ -57,6 +60,15 @@ float2 direction3, float4 params3,
      position, tangent, normal);
     _GerstnerWave_Add(vertexPosition, direction3, 
      params3.x, params3.y, params3.z, params3.w,
+     position, tangent, normal);
+    _GerstnerWave_Add(vertexPosition, direction4,
+     params4.x, params4.y, params4.z, params4.w,
+     position, tangent, normal);
+    _GerstnerWave_Add(vertexPosition, direction5,
+     params5.x, params5.y, params5.z, params5.w,
+     position, tangent, normal);
+    _GerstnerWave_Add(vertexPosition, direction6,
+     params6.x, params6.y, params6.z, params6.w,
      position, tangent, normal);
     
 }
@@ -79,5 +91,12 @@ float2 direction3, float4 params3,
      position, tangent, normal);
     _GerstnerWave_Add(vertexPosition, direction3, params3.x, params3.y, params3.z, params3.w,
      position, tangent, normal);
+    
+    //_GerstnerWave_Add(vertexPosition, direction4, params4.x, params4.y, params4.z, params4.w,
+    // position, tangent, normal);
+    //_GerstnerWave_Add(vertexPosition, direction5, params5.x, params5.y, params5.z, params5.w,
+    // position, tangent, normal);
+    //_GerstnerWave_Add(vertexPosition, direction6, params6.x, params6.y, params6.z, params6.w,
+    // position, tangent, normal);
     
 }
